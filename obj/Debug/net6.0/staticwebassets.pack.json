@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Automation Website.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Automation Website.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Automation Website.props",
+      "PackagePath": "build\\Automation Website.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Automation Website.props",
+      "PackagePath": "buildMultiTargeting\\Automation Website.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Automation Website.props",
+      "PackagePath": "buildTransitive\\Automation Website.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
