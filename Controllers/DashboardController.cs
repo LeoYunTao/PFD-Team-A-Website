@@ -6,7 +6,7 @@ namespace Automation_Website.Controllers
     public class DashboardController : Controller
     {
         // GET: DashboardController
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             return View();
         }
