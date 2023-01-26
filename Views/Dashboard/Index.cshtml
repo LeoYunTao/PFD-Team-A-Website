@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Use Unicode character encoding - multi-language compatibity -->
+    <meta charset="utf-8">
+    <!-- Set the initial view zooming scale for mobile device -->
+    <meta name="viewport" content="width = device-width,
+ initial-scale = 1" />
+    <title>Dashboard</title>
+    <!-- Reference to customized styling for this website -->
+    <link rel="stylesheet" type="text/css" href="~/css/Site.css">
+</head>
+<body>
+    <h1 class="text-center">Test Case</h1>
+    <div class="container">
+        <div class="row">
+            <section class="col-lg-5 border text-center">
+                <p>Choose Operating System(OS):</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OSRadio" id="UbuntuRadio" checked>
+                    <label class="form-check-label" for="UbuntuRadio">
+                        Ubuntu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OSRadio" id="LinuxRadio">
+                    <label class="form-check-label" for="LinuxRadio">
+                        Linux
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OSRadio" id="IOSRadio">
+                    <label class="form-check-label" for="IOSRadio">
+                        IOS
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OSRadio" id="WindowsRadio">
+                    <label class="form-check-label" for="WindowsRadio">
+                        Windows
+                    </label>
+                </div>
+            </section>
+            <section class="col-lg-5 offset-lg-2 border text-center">
+                <p>Choose Test Case:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        test_apply_account
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        test_apply_loan
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        test_forgot_password
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        test_loan_status
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault5">
+                    <label class="form-check-label" for="flexRadioDefault5">
+                        test_login
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault6">
+                    <label class="form-check-label" for="flexRadioDefault6">
+                        test_register
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="TCRadio" id="flexRadioDefault7">
+                    <label class="form-check-label" for="flexRadioDefault7">
+                        test_transfer_funds
+                    </label>
+                </div>
+            </section>
+        </div>
+        <div class="row mt-lg-4">
+            <section class="col-lg-5 border text-center">
+                <p>Email:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="EmailRadio" id="YTRadio" checked>
+                    <label class="form-check-label" for="YTRadio">
+                        yt@gmail.com
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="EmailRadio" id="ZachRadio">
+                    <label class="form-check-label" for="ZachRadio">
+                        Zach@gmail.com
+                    </label>
+                </div>
+                <button type="button" class="btn btn-dark mt-lg-5 mb-lg-4">Add New Email</button>
+            </section>
+            <section class="col-lg-5 offset-lg-2 border text-center">
+                <p>Choose Browser:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="BrowserRadio" id="ChromeRadio" checked>
+                    <label class="form-check-label" for="ChromeRadio">
+                        Chrome
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="BrowserRadio" id="EdgeRadio">
+                    <label class="form-check-label" for="EdgeRadio">
+                        Microsoft Edge
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="BrowserRadio" id="FireFoxRadio">
+                    <label class="form-check-label" for="FireFoxRadio">
+                        Firefox
+                    </label>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="text-center mt-lg-5">
+        <input class="btn btn-dark" type="submit" value="Run Test">
+    </div>
+</body>
+</html>
+
