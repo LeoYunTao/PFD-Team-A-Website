@@ -4,15 +4,18 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
-    $("#idbutton").click(function () {
-        if ($("#idform").hasClass("invisible")) {
-            $("#idform").removeClass("invisible")
-            $("#idform").addClass("visible")
-        }
-        else {
-            $("#idform").removeClass("visible")
-            $("#idform").addClass("invisible")
-        }
+    $("#idButton").click(function () {
+        $("#idform").css('display', 'block')
     });
+
+    // with only the if, it is able to pop up but not able to disappear but with the else, it completely doesnt work.
+
+    $("#idform").submit(function (event) {
+        event.preventDefault();
+        var email = $("#newEmail").val();           // input Value
+        var nextLine = document.createElement("br");   // br to so it is not printed in same ine as button
+        $("button").before(email);    // Insert new elements after submit
+    });
+
+    // for some reason prints 2 elements twice
 });
-// with only the if, it is able to pop up but not able to disappear but with the else, it completely doesnt work.
