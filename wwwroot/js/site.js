@@ -14,7 +14,7 @@ $(document).ready(function () {
         event.preventDefault();
         var email = $("#newEmail").val();           // input Value
         var nextLine = document.createElement("br");   // br to so it is not printed in same ine as button
-        $("button").before(email);    // Insert new elements after submit
+        $("#idButton").before(email, nextLine);    // Insert new elements after submit
     });
 
     // for some reason prints 2 elements twice
