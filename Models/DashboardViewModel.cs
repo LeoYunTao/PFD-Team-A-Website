@@ -25,12 +25,12 @@ namespace Automation_Website.Models
             string list = "";
             for (int i = 0; i < checkboxList.Count; i++)
             {
-                if (i > 0 && checkboxList[i].IsSelected)
+                if (i > 0 && checkboxList[i].IsSelected && checkboxList[i-1].IsSelected)
                 {
                     list += delimeter;
                 }
 
-                if (stringEnclose)
+                if (stringEnclose && checkboxList[i].IsSelected)
                 {
                     list += "'" + checkboxList[i].ToJson() + "'";
                 }
