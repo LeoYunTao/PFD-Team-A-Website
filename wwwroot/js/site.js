@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("#idbutton").click(function () {
         if ($("#idform").hasClass("invisible")) {
             $("#idform").removeClass("invisible")
