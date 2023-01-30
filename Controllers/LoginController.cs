@@ -10,7 +10,7 @@ namespace Automation_Website.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(IFormCollection formData)
+        public ActionResult Dashboard(IFormCollection formData)
         {
             // Read inputs from textboxes
             // Email address converted to lowercase
