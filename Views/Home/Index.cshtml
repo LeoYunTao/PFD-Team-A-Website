@@ -4,6 +4,7 @@
 }
 @*@model WEB2022_Team1_Assignment.Models.ZZLogin*@
 
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,25 +22,27 @@
                     <div class="card-body p-5 text-center">
 
                         <form method="post" action="~/Dashboard/Dashboard" class="mb-md-5 mt-md-4 pb-5">
-
+                           <fieldset class="loginFieldset">
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                             <p class="text-white-50 mb-5">Please enter your username and password!</p>
 
                             <div class="form-outline form-white mb-4">
-                                <label class="form-label" for="typeUsername">Username</label>
-                                <input type="text" id="typeUsernameX" class="form-control form-control-lg" />
+                                <label class="form-label" for="Username">Username</label>
+                                <input type="text" id="Username" name="Username" class="form-control form-control-lg" required/>
 
                             </div>
 
                             <div class="form-outline form-white mb-4">
-                                <label class="form-label" for="typePasswordX">Password</label>
-                                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                                <label class="form-label" for="Password">Password</label>
+                                    <input type="password" id="Password" name ="Password" class="form-control form-control-lg" required />
 
                             </div>
 
 
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
+                                <br />
+                                <span style="color:red;">@TempData["Message"]</span> <!-- Error message appeared when login is wrong-->
+                           </fieldset>
 
                         </form>
                     </div>

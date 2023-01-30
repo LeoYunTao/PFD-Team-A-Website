@@ -1,4 +1,5 @@
-﻿
+﻿@model DashboardViewModel
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,130 +16,140 @@
     <title>Dashboard</title>
     <!-- Reference to customized styling for this website -->
     <link rel="stylesheet" type="text/css" href="~/css/Site.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="~/js/site.js"></script>
 </head>
 <body>
-    <h1 class="text-center">Test Case</h1>
-    <div class="container">
+    <h1 class="mt-4 mb-4">Test Cases</h1>
+    <!-- 1st row -->
+<div class="row">
+<div class="col-sm-12">
+<p style="padding:2px 15px;">
+    @{ 
+        string username = "Anonymous"; 
+        string userRole = "Unknown"; 
+        if (Context.Session.GetString("Username") != null) 
+        { 
+            username = Context.Session.GetString("Username"); 
+        }
+                    if (Context.Session.GetString("Role") != null) 
+                    { 
+                        userRole = Context.Session.GetString("Role"); 
+                    }
+                } 
+                Welcome,&nbsp; <span style="font-weight:bold">@username</span>&nbsp; (Role: @userRole).&nbsp;
+            </p>
+        </div>
+    </div>
+    <form asp-controller="Dashboard" asp-action="RunTest" method="post" class="container">
         <div class="row">
-            <section class="col-lg-5 border text-center">
-                <p>Choose Operating System(OS):</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="OSRadio" id="UbuntuRadio" checked>
-                    <label class="form-check-label" for="UbuntuRadio">
-                        Ubuntu
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="OSRadio" id="LinuxRadio">
-                    <label class="form-check-label" for="LinuxRadio">
-                        Linux
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="OSRadio" id="IOSRadio">
-                    <label class="form-check-label" for="IOSRadio">
-                        IOS
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="OSRadio" id="WindowsRadio">
-                    <label class="form-check-label" for="WindowsRadio">
-                        Windows
-                    </label>
-                </div>
+            <section class="col-lg-5 shadow rounded px-4 py-3">
+                <label asp-for="OperatingSystems" class="form-label fw-bold mb-2"></label>
+                @for(int i = 0; i < Model.OperatingSystems.Count; i++)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="@Model.OperatingSystems[i].IsSelected">
+                        <label class="form-check-label" asp-for="@Model.OperatingSystems[i].IsSelected">
+                            @Model.OperatingSystems[i].DisplayName
+                        </label>
+                        <input type="hidden" asp-for="@Model.OperatingSystems[i].DisplayName">
+                        <input type="hidden" asp-for="@Model.OperatingSystems[i].Value">
+                    </div>
+                }
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
-                <p>Choose Test Case:</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault1" checked>
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        test_apply_account
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        test_apply_loan
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault3">
-                    <label class="form-check-label" for="flexRadioDefault3">
-                        test_forgot_password
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault4">
-                    <label class="form-check-label" for="flexRadioDefault4">
-                        test_loan_status
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault5">
-                    <label class="form-check-label" for="flexRadioDefault5">
-                        test_login
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault6">
-                    <label class="form-check-label" for="flexRadioDefault6">
-                        test_register
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="TCRadio" id="flexRadioDefault7">
-                    <label class="form-check-label" for="flexRadioDefault7">
-                        test_transfer_funds
-                    </label>
-                </div>
+            <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3">
+                <label asp-for="TestCases" class="form-label fw-bold mb-2"></label>
+                @for (int i = 0; i < Model.TestCases.Count; i++)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="@Model.TestCases[i].IsSelected">
+                        <label class="form-check-label" asp-for="@Model.TestCases[i].IsSelected">
+                            @Model.TestCases[i].Value
+                        </label>
+                        <input type="hidden" asp-for="@Model.TestCases[i].Value">
+                    </div>
+                }
             </section>
         </div>
         <div class="row mt-lg-4">
-            <section class="col-lg-5 border text-center">
-                <p>Email:</p>
-                yt@gmail.com <br />
-                Zach@gmail.com <br />
-                <button type="button" class="btn btn-dark mt-lg-3 mb-lg-4" id="idButton">
+            <section class="col-lg-5 shadow rounded px-4 py-3">
+                <div id="emails">
+                    <label asp-for="Emails" class="form-label fw-bold mb-2"></label>
+                    @for (int i = 0; i < Model.Emails.Count; i++)
+                    {
+                        <div class="form-check ps-0">
+                            <input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
+                            <label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
+                                @Model.Emails[i].Value
+                            </label>
+                            <input type="hidden" asp-for="@Model.Emails[i].Value">
+                        </div>
+                    }
+                </div>
+                
+                <button type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Add New Email
                 </button>
 
-                <div style="display:none" id="idform">
-                    <form>
-                        <div class="form-group mb-lg-4">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="newEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                    </form>
+                <div class="form-group collapse border rounded p-3" id="collapseExample">
+                    <label for="exampleInputEmail1" class="mb-2">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                 </div>
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
-                <p>Choose Browser:</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="BrowserRadio" id="ChromeRadio" checked>
-                    <label class="form-check-label" for="ChromeRadio">
-                        Chrome
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="BrowserRadio" id="EdgeRadio">
-                    <label class="form-check-label" for="EdgeRadio">
-                        Microsoft Edge
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="BrowserRadio" id="FireFoxRadio">
-                    <label class="form-check-label" for="FireFoxRadio">
-                        Firefox
-                    </label>
-                </div>
+            <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3">
+                <label asp-for="Browsers" class="form-label text-center fw-bold mb-2"></label>
+                @for (int i = 0; i < Model.Browsers.Count; i++)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="@Model.Browsers[i].IsSelected">
+                        <label class="form-check-label" asp-for="@Model.Browsers[i].IsSelected">
+                            @Model.Browsers[i].DisplayName
+                        </label>
+                        <input type="hidden" asp-for="@Model.Browsers[i].DisplayName">
+                        <input type="hidden" asp-for="@Model.Browsers[i].Value">
+                    </div>
+                }
             </section>
         </div>
-    </div>
-    <div class="text-center mt-lg-5">
-        <input class="btn btn-dark" type="submit" value="Run Test">
-    </div>
+        
+        <div class="mt-lg-5 text-center">
+            <input class="btn btn-dark" type="submit" value="Run Test">
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        const isEmailValid = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+        };
+
+        $("#addEmailButton").click(() => {
+            let emailElement = $("#exampleInputEmail1");
+
+            let email = emailElement.val();
+
+            if (email == "") return;
+
+            if (!isEmailValid(email))
+            {
+                emailElement.val("");
+                alert("Email is not valid");
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("AddEmail")',
+                data: emailElement.serialize(),
+                success: html => {
+                    window.location.href = "@Url.Action("Dashboard")";
+                }
+            });
+
+        });
+    </script>
 </body>
 </html>

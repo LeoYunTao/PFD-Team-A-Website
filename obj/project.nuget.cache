@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6kXxIlQSfCJHAJTg4XCh7rDD+3+OlhUBmwq1ZNrXE/Duf8wy8/4X/Q8zk5h6Y1wV9LsOJ/fPpGyDXacJ4buKRg==",
+  "dgSpecHash": "uJXMZEZiv1Xhi1T4Qo3s4jm+bW1PP5sLy80tAbRktMDdvpd+QtFS2DdrLPzQNa9Xd5fkwfwz8sHLdaSfhMqYKQ==",
   "success": true,
   "projectFilePath": "C:\\School\\PFD\\Website\\Automation Website.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\terre\\.nuget\\packages\\nuget.projectmodel\\6.3.1\\nuget.projectmodel.6.3.1.nupkg.sha512",
     "C:\\Users\\terre\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\terre\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
+    "C:\\Users\\terre\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512",
     "C:\\Users\\terre\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\terre\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\terre\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
