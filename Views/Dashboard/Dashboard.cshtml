@@ -19,6 +19,26 @@
 </head>
 <body>
     <h1 class="mt-4 mb-4">Test Cases</h1>
+    <!-- 1st row -->
+<div class="row">
+<div class="col-sm-12">
+<p style="padding:2px 15px;">
+    @{ 
+        string username = "Anonymous"; 
+        string userRole = "Unknown"; 
+        if (Context.Session.GetString("Username") != null) 
+        { 
+            username = Context.Session.GetString("Username"); 
+        }
+                    if (Context.Session.GetString("Role") != null) 
+                    { 
+                        userRole = Context.Session.GetString("Role"); 
+                    }
+                } 
+                Welcome,&nbsp; <span style="font-weight:bold">@username</span>&nbsp; (Role: @userRole).&nbsp;
+            </p>
+        </div>
+    </div>
     <form asp-controller="Dashboard" asp-action="RunTest" method="post" class="container">
         <div class="row">
             <section class="col-lg-5 shadow rounded px-4 py-3">
