@@ -18,11 +18,11 @@
     <link rel="stylesheet" type="text/css" href="~/css/Site.css">
 </head>
 <body>
-    <h1 class="text-center">Test Case</h1>
+    <h1 class="mt-4 mb-4">Test Cases</h1>
     <form asp-controller="Dashboard" asp-action="RunTest" method="post" class="container">
         <div class="row">
-            <section class="col-lg-5 border text-center">
-                <label asp-for="OperatingSystems" class="form-label"></label>
+            <section class="col-lg-5 shadow rounded px-4 py-3">
+                <label asp-for="OperatingSystems" class="form-label fw-bold mb-2"></label>
                 @for(int i = 0; i < Model.OperatingSystems.Count; i++)
                 {
                     <div class="form-check">
@@ -35,8 +35,8 @@
                     </div>
                 }
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
-                <label asp-for="TestCases" class="form-label"></label>
+            <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3">
+                <label asp-for="TestCases" class="form-label fw-bold mb-2"></label>
                 @for (int i = 0; i < Model.TestCases.Count; i++)
                 {
                     <div class="form-check">
@@ -50,12 +50,12 @@
             </section>
         </div>
         <div class="row mt-lg-4">
-            <section class="col-lg-5 border text-center">
+            <section class="col-lg-5 shadow rounded px-4 py-3">
                 <div id="emails">
-                    <label asp-for="Emails" class="form-label"></label>
+                    <label asp-for="Emails" class="form-label fw-bold mb-2"></label>
                     @for (int i = 0; i < Model.Emails.Count; i++)
                     {
-                        <div class="form-check">
+                        <div class="form-check ps-0">
                             <input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
                             <label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
                                 @Model.Emails[i].Value
@@ -65,18 +65,18 @@
                     }
                 </div>
                 
-                <button type="button" class="btn btn-dark" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Add New Email
                 </button>
 
-                <div class="form-group collapse" id="collapseExample">
-                    <label for="exampleInputEmail1">Email address</label>
+                <div class="form-group collapse border rounded p-3" id="collapseExample">
+                    <label for="exampleInputEmail1" class="mb-2">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                 </div>
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
-                <label asp-for="Browsers" class="form-label"></label>
+            <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3">
+                <label asp-for="Browsers" class="form-label text-center fw-bold mb-2"></label>
                 @for (int i = 0; i < Model.Browsers.Count; i++)
                 {
                     <div class="form-check">
@@ -90,7 +90,8 @@
                 }
             </section>
         </div>
-        <div class="text-center mt-lg-5">
+        
+        <div class="mt-lg-5 text-center">
             <input class="btn btn-dark" type="submit" value="Run Test">
         </div>
     </form>
