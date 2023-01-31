@@ -9088,19 +9088,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\matthew\\.nuget\\packages\\": {}
+    "C:\\Users\\terre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\Automation Website.csproj",
+      "projectUniqueName": "C:\\School\\PFD\\Website\\Automation Website.csproj",
       "projectName": "Automation Website",
-      "projectPath": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\Automation Website.csproj",
-      "packagesPath": "C:\\Users\\matthew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\",
+      "projectPath": "C:\\School\\PFD\\Website\\Automation Website.csproj",
+      "packagesPath": "C:\\Users\\terre\\.nuget\\packages\\",
+      "outputPath": "C:\\School\\PFD\\Website\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\matthew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\terre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
