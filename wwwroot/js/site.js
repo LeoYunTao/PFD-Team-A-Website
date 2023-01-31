@@ -20,6 +20,15 @@ $(document).ready(function () {
 
     // for some reason prints 2 elements twice
 });
+function selectAll() {
+
+    for (int i = 0; i < Model.Browsers.Count; i++)
+    {
+        Model.Browsers[i].IsSelected = true;
+    }
+
+
+}
 =======
 ﻿
 >>>>>>> executeTestCases

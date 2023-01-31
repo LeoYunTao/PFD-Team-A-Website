@@ -21,8 +21,11 @@
     <h1 class="text-center">Test Case</h1>
     <form asp-controller="Dashboard" asp-action="RunTest" method="post" class="container">
         <div class="row">
-            <section class="col-lg-5 border text-center">
+            <section class="col-lg-5 border text-center" id="checkboxes1">
                 <label asp-for="OperatingSystems" class="form-label"></label>
+                <div class="form-check">
+                    <input type="checkbox" id="checkall1"> Select/Deselect All<br><br>
+                </div>
                 @for(int i = 0; i < Model.OperatingSystems.Count; i++)
                 {
                     <div class="form-check">
@@ -35,8 +38,11 @@
                     </div>
                 }
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
+            <section class="col-lg-5 offset-lg-2 border text-center" id="checkboxes2">
                 <label asp-for="TestCases" class="form-label"></label>
+                <div class="form-check">
+                    <input type="checkbox" id="checkall2"> Select/Deselect All<br><br>
+                </div>
                 @for (int i = 0; i < Model.TestCases.Count; i++)
                 {
                     <div class="form-check">
@@ -63,6 +69,7 @@
                             <input type="hidden" asp-for="@Model.Emails[i].Value">
                         </div>
                     }
+                    
                 </div>
                 
                 <button type="button" class="btn btn-dark" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -75,10 +82,16 @@
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
             </section>
-            <section class="col-lg-5 offset-lg-2 border text-center">
+            <section class="col-lg-5 offset-lg-2 border text-center" id="checkboxes3">
                 <label asp-for="Browsers" class="form-label"></label>
+                <br><br>
+                <div class="form-check">
+                    <input type="checkbox" id="checkall3"> Select/Deselect All<br><br>
+                </div>
                 @for (int i = 0; i < Model.Browsers.Count; i++)
                 {
+                    
+
                     <div class="form-check">
                         <input class="form-check-input" asp-for="@Model.Browsers[i].IsSelected">
                         <label class="form-check-label" asp-for="@Model.Browsers[i].IsSelected">
@@ -128,6 +141,48 @@
                 }
             });
 
+        });
+        //OS
+        function toggleChecked1(status1) {
+            $("#checkboxes1 input").each(function () {
+                $(this).prop("checked", status1);
+            });
+        }
+        $(document).ready(function () {
+            var checkAllBox1 = $("#checkall1");
+            checkAllBox1.prop('checked', true);
+            checkAllBox1.click(function () {
+                var status1 = checkAllBox1.prop('checked');
+                toggleChecked1(status1);
+            });
+        });
+        //Test case
+        function toggleChecked2(status2) {
+            $("#checkboxes2 input").each(function () {
+                $(this).prop("checked", status2);
+            });
+        }
+        $(document).ready(function () {
+            var checkAllBox2 = $("#checkall2");
+            checkAllBox2.prop('checked', true);
+            checkAllBox2.click(function () {
+                var status2 = checkAllBox2.prop('checked');
+                toggleChecked2(status2);
+            });
+        });
+        //Browser
+        function toggleChecked3(status3) {
+            $("#checkboxes3 input").each(function () {
+                $(this).prop("checked", status3);
+            });
+        }
+        $(document).ready(function () {
+            var checkAllBox3 = $("#checkall3");
+            checkAllBox3.prop('checked', true);
+            checkAllBox3.click(function () {
+                var status3 = checkAllBox3.prop('checked');
+                toggleChecked3(status3);
+            });
         });
     </script>
 </body>
