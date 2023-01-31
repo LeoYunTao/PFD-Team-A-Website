@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w+OQWIQrSRzwGXZBDBqhbW1qDOniO7QPX5+x/cBf8go=",
+  "Hash": "FMddDUz4H05CpR353aNgqFSSlHOnhLmVv8MSgQcTmQY=",
   "Source": "Automation Website",
   "BasePath": "_content/Automation Website",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Automation Website\\wwwroot",
       "Source": "Automation Website",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
+      "Identity": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
       "SourceId": "Automation Website",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
+      "OriginalItemSpec": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
     },
     {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
+      "Identity": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
       "SourceId": "Automation Website",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
+      "OriginalItemSpec": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
     },
     {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\css\\site.css",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\favicon.ico",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\favicon.ico",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\js\\site.js",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
