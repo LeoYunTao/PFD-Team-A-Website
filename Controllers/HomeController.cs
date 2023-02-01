@@ -39,7 +39,7 @@ namespace Automation_Website.Controllers
         }
 
         [HttpPost]
-        public ActionResult Dashboard(IFormCollection formData)
+        public ActionResult Login (IFormCollection formData)
         {
             // Read inputs from textboxes
             // Username converted to lowercase
