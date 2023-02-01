@@ -234,7 +234,7 @@ namespace Automation_Website.Controllers
         {
             RestRequest request = new RestRequest();
             request.AddHeader("Accept", "application/vnd.github+json");
-            request.AddHeader("Authorization", "Bearer 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");
+            request.AddHeader("Authorization", "Bearer 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");
             request.AddHeader("X-GitHub-Api-Version", "2022-11-28");
             request.AddHeader("Content-Type", "application/json");
 
