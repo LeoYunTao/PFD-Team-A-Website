@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/Site.css">
 </head>
 <body>
-    <h1 class="mt-4 mb-4">Test Cases</h1>
+    <h1 class="mt-4 mb-4">Creating Test Cases</h1>
     <!-- 1st row -->
 <div class="row">
 <div class="col-sm-12">
@@ -39,13 +39,13 @@
             </p>
         </div>
     </div>
-    <form asp-controller="Dashboard" asp-action="RunTest" method="post" class="container">
+    <form asp-controller="Dashboard" asp-action="TestStatus" method="post" class="container">
         <div class="row">
-            <section class="col-lg-5 shadow rounded px-4 py-3r" id="checkboxes1">
-                <label asp-for="OperatingSystems" class="form-label fw-bold mb-2"></label>
-                <div class="form-check">
-                    <input type="checkbox" id="checkall1"> Select/Deselect All<br><br>
-                </div>
+            <section class="col-lg-5 shadow rounded px-4 py-3" id="checkboxes1">
+                <label asp-for="OperatingSystems" class="form-label fw-bold"></label>
+                <br />
+                <input type="checkbox" id="checkall1"> 
+                <label for="checkall1" class="mb-2">Select/Deselect All</label>
                 @for(int i = 0; i < Model.OperatingSystems.Count; i++)
                 {
                     <div class="form-check">
@@ -59,10 +59,10 @@
                 }
             </section>
             <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes2">
-                <label asp-for="TestCases" class="form-label fw-bold mb-2"></label>
-                <div class="form-check">
-                    <input type="checkbox" id="checkall2"> Select/Deselect All<br><br>
-                </div>
+                <label asp-for="TestCases" class="form-label fw-bold"></label>
+                <br />
+                <input type="checkbox" id="checkall2">
+                <label for="checkall2" class="mb-2">Select/Deselect All</label>
                 @for (int i = 0; i < Model.TestCases.Count; i++)
                 {
                     <div class="form-check">
@@ -103,11 +103,10 @@
                 </div>
             </section>
             <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes3">
-                <label asp-for="Browsers" class="form-label text-center fw-bold mb-2"></label>
-                <br><br>
-                <div class="form-check">
-                    <input type="checkbox" id="checkall3"> Select/Deselect All<br><br>
-                </div>
+                <label asp-for="Browsers" class="form-label text-center fw-bold"></label>
+                <br />
+                <input type="checkbox" id="checkall3">
+                <label for="checkall3" class="mb-2">Select/Deselect All</label>
                 @for (int i = 0; i < Model.Browsers.Count; i++)
                 {
                     
@@ -123,88 +122,113 @@
                 }
             </section>
         </div>
-        
-        <div class="mt-lg-5 text-center">
-            <input class="btn btn-dark" type="submit" value="Run Test">
+
+        <div class="row my-5">
+            <input class="col-lg-2 btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="submit" value="Run Test">
         </div>
     </form>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        const isEmailValid = (email) => {
-            return String(email)
-                .toLowerCase()
-                .match(
-                    /^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                );
-        };
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+                <lottie-player class="mx-auto" src="https://assets8.lottiefiles.com/private_files/lf30_stxf8wrq.json" background="transparent" speed="1" style="width: 525px; height: 300px;" loop autoplay></lottie-player>
+				<p class="text-center mb-4">Setting Up Automated Testing...</p>
+			</div>
+		</div>
+	</div>
+    
+    @section Scripts 
+    {
+        <script type="text/javascript">
+            const isEmailValid = (email) => {
+                return String(email)
+                    .toLowerCase()
+                    .match(
+                        /^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    );
+            };
 
-        $("#addEmailButton").click(() => {
-            let emailElement = $("#exampleInputEmail1");
+            $("#addEmailButton").click(() => {
+                let emailElement = $("#exampleInputEmail1");
 
-            let email = emailElement.val();
+                let email = emailElement.val();
 
-            if (email == "") return;
+                if (email == "") return;
 
-            if (!isEmailValid(email))
-            {
-                emailElement.val("");
-                alert("Email is not valid");
-                return;
-            }
-
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("AddEmail")',
-                data: emailElement.serialize(),
-                success: html => {
-                    window.location.href = "@Url.Action("Dashboard")";
+                if (!isEmailValid(email))
+                {
+                    emailElement.val("");
+                    alert("Email is not valid");
+                    return;
                 }
-            });
 
-        });
-        //OS
-        function toggleChecked1(status1) {
-            $("#checkboxes1 input").each(function () {
-                $(this).prop("checked", status1);
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddEmail")',
+                    data: emailElement.serialize(),
+                    success: html => {
+                        window.location.href = "@Url.Action("Dashboard")";
+                    }
+                });
+
             });
-        }
-        $(document).ready(function () {
-            var checkAllBox1 = $("#checkall1");
-            checkAllBox1.prop('checked', true);
-            checkAllBox1.click(function () {
-                var status1 = checkAllBox1.prop('checked');
-                toggleChecked1(status1);
+            //OS
+            function toggleChecked1(status1) {
+                $("#checkboxes1 input").each(function () {
+                    $(this).prop("checked", status1);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox1 = $("#checkall1");
+                checkAllBox1.prop('checked', true);
+                checkAllBox1.click(function () {
+                    var status1 = checkAllBox1.prop('checked');
+                    toggleChecked1(status1);
+                });
             });
-        });
-        //Test case
-        function toggleChecked2(status2) {
-            $("#checkboxes2 input").each(function () {
-                $(this).prop("checked", status2);
+            //Test case
+            function toggleChecked2(status2) {
+                $("#checkboxes2 input").each(function () {
+                    $(this).prop("checked", status2);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox2 = $("#checkall2");
+                checkAllBox2.prop('checked', true);
+                checkAllBox2.click(function () {
+                    var status2 = checkAllBox2.prop('checked');
+                    toggleChecked2(status2);
+                });
             });
-        }
-        $(document).ready(function () {
-            var checkAllBox2 = $("#checkall2");
-            checkAllBox2.prop('checked', true);
-            checkAllBox2.click(function () {
-                var status2 = checkAllBox2.prop('checked');
-                toggleChecked2(status2);
+            //Browser
+            function toggleChecked3(status3) {
+                $("#checkboxes3 input").each(function () {
+                    $(this).prop("checked", status3);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox3 = $("#checkall3");
+                checkAllBox3.prop('checked', true);
+                checkAllBox3.click(function () {
+                    var status3 = checkAllBox3.prop('checked');
+                    toggleChecked3(status3);
+                });
             });
-        });
-        //Browser
-        function toggleChecked3(status3) {
-            $("#checkboxes3 input").each(function () {
-                $(this).prop("checked", status3);
+            $(document).ready(function () {
+                $("form").submit(function (event) {
+                    var valid = true;
+                    $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
+                        if (!$(this).find("input[type='checkbox']:checked").length) {
+                            alert($(this).text())
+                            valid = false;
+                        }
+                    });
+                    if (!valid) {
+                        event.preventDefault();
+                    }
+                });
             });
-        }
-        $(document).ready(function () {
-            var checkAllBox3 = $("#checkall3");
-            checkAllBox3.prop('checked', true);
-            checkAllBox3.click(function () {
-                var status3 = checkAllBox3.prop('checked');
-                toggleChecked3(status3);
-            });
-        });
-    </script>
+        </script>
+    }
 </body>
 </html>
