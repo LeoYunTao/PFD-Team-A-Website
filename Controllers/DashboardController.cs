@@ -75,11 +75,21 @@ namespace Automation_Website.Controllers
 
             DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str);
 
-            foreach(Checkbox checkbox in dashboardViewModel.Emails)
+            string emailToDelete = formCollection["email"].ToString();
+
+            foreach (var i in formCollection.Keys)
             {
-                if (formCollection["email"] == checkbox.Value)
+                System.Diagnostics.Debug.WriteLine(i);
+            }
+
+            System.Diagnostics.Debug.WriteLine(emailToDelete);
+
+			foreach (Checkbox checkbox in dashboardViewModel.Emails)
+            {
+                if (emailToDelete == checkbox.Value)
                 {
                     dashboardViewModel.Emails.Remove(checkbox);
+                    break;
                 }
             }
 

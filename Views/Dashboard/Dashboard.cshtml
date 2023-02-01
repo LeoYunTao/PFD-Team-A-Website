@@ -1,313 +1,283 @@
 ﻿@model DashboardViewModel
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
 
 <h1 class="mt-4 mb-2">Creating Test Cases</h1>
 
-<p class="mb-3"> 
-    @{ 
-        string username = "Anonymous"; 
-        string userRole = "Unknown"; 
-        if (Context.Session.GetString("Username") != null) 
-        { 
-            username = Context.Session.GetString("Username"); 
-        }
-        if (Context.Session.GetString("Role") != null) 
-        { 
-            userRole = Context.Session.GetString("Role"); 
-        }
-    } 
-        Welcome,&nbsp; <span style="font-weight:bold">@username</span>&nbsp; (Role: @userRole).&nbsp;
+<p class="mb-3">
+	@{
+		string username = "Anonymous";
+		string userRole = "Unknown";
+		if (Context.Session.GetString("Username") != null)
+		{
+			username = Context.Session.GetString("Username");
+		}
+		if (Context.Session.GetString("Role") != null)
+		{
+			userRole = Context.Session.GetString("Role");
+		}
+	}
+	Welcome,&nbsp; <span style="font-weight:bold">@username</span>&nbsp; (Role: @userRole).&nbsp;
 </p>
 
 <div class="row">
 	<div class="col-lg-5 pe-lg-0">
-        <label class="h4 form-label" for="url">Website Link</label>
+		<label class="h4 form-label" for="url">Website Link</label>
 		<div class="input-group mb-4">
 			<span class="input-group-text" id="basic-addon1">URL</span>
 			<input type="url" class="form-control col-lg-3" id="url" readonly value="https://uibank.uipath.com/" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
 		</div>
-    </div>
+	</div>
 </div>
 
 <form asp-controller="Dashboard" asp-action="TestStatus" method="post" class="container">
-    <div class="row">
-        <section class="col-lg-5 shadow rounded px-4 py-3" id="checkboxes1">
-            <label asp-for="OperatingSystems" class="form-label fw-bold"></label>
-            <br />
-            <input type="checkbox" id="checkall1"> 
-            <label for="checkall1" class="mb-2">Select/Deselect All</label>
-            @for(int i = 0; i < Model.OperatingSystems.Count; i++)
-            {
-                <div class="form-check">
-                    <input class="form-check-input" asp-for="@Model.OperatingSystems[i].IsSelected">
-                    <label class="form-check-label" asp-for="@Model.OperatingSystems[i].IsSelected">
-                        @Model.OperatingSystems[i].DisplayName
-                    </label>
-                    <input type="hidden" asp-for="@Model.OperatingSystems[i].DisplayName">
-                    <input type="hidden" asp-for="@Model.OperatingSystems[i].Value">
-                </div>
-            }
-        </section>
-        <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes2">
-            <label asp-for="TestCases" class="form-label fw-bold"></label>
-            <br />
-            <input type="checkbox" id="checkall2">
-            <label for="checkall2" class="mb-2">Select/Deselect All</label>
-            @for (int i = 0; i < Model.TestCases.Count; i++)
-            {
-                <div class="form-check">
-                    <input class="form-check-input" asp-for="@Model.TestCases[i].IsSelected">
-                    <label class="form-check-label" asp-for="@Model.TestCases[i].IsSelected">
-                        @Model.TestCases[i].Value
-                    </label>
-                    <input type="hidden" asp-for="@Model.TestCases[i].Value">
-                </div>
-            }
-        </section>
-    </div>
-    <div class="row mt-lg-4">
-        <section class="col-lg-5 shadow rounded px-4 py-3">
-            <div id="emails">
-                <label asp-for="Emails" class="form-label fw-bold mb-2"></label>
-                @for (int i = 0; i < Model.Emails.Count; i++)
-                {
-                    <div class="form-check ps-0">
-                        <input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
-                        <label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
-                            @Model.Emails[i].Value
-                        </label>
-                        <input type="hidden" asp-for="@Model.Emails[i].Value">
-                    </div>
-                }
-                    
-            </div>
-                
-                <button onclick="myFunction();" type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Add New Email
-                </button>
+	<div class="row">
+		<section class="col-lg-5 shadow rounded px-4 py-3" id="checkboxes1">
+			<label asp-for="OperatingSystems" class="form-label fw-bold"></label>
+			<br />
+			<input type="checkbox" id="checkall1">
+			<label for="checkall1" class="mb-2">Select/Deselect All</label>
+			@for (int i = 0; i < Model.OperatingSystems.Count; i++)
+			{
+				<div class="form-check">
+					<input class="form-check-input" asp-for="@Model.OperatingSystems[i].IsSelected">
+					<label class="form-check-label" asp-for="@Model.OperatingSystems[i].IsSelected">
+						@Model.OperatingSystems[i].DisplayName
+					</label>
+					<input type="hidden" asp-for="@Model.OperatingSystems[i].DisplayName">
+					<input type="hidden" asp-for="@Model.OperatingSystems[i].Value">
+				</div>
+			}
+		</section>
+		<section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes2">
+			<label asp-for="TestCases" class="form-label fw-bold"></label>
+			<br />
+			<input type="checkbox" id="checkall2">
+			<label for="checkall2" class="mb-2">Select/Deselect All</label>
+			@for (int i = 0; i < Model.TestCases.Count; i++)
+			{
+				<div class="form-check">
+					<input class="form-check-input" asp-for="@Model.TestCases[i].IsSelected">
+					<label class="form-check-label" asp-for="@Model.TestCases[i].IsSelected">
+						@Model.TestCases[i].Value
+					</label>
+					<input type="hidden" asp-for="@Model.TestCases[i].Value">
+				</div>
+			}
+		</section>
+	</div>
+	<div class="row mt-lg-4">
+		<section class="col-lg-5 shadow rounded px-4 py-3">
+			<div id="emails">
+				<label asp-for="Emails" class="form-label fw-bold mb-2"></label>
+				@for (int i = 0; i < Model.Emails.Count; i++)
+				{
+					<div class="form-check ps-0">
+						<input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
+						<label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
+							@Model.Emails[i].Value
+						</label>
+						<input type="hidden" asp-for="@Model.Emails[i].Value">
+						<button type="button" class="col-2 offset-lg-4">
+							<img src="~/images/negative-button.png" alt="remove" class="img-fluid"/>
+                        </button>
+					</div>
+				}
 
-            <div class="form-group collapse border rounded p-3" id="collapseExample">
-                <label for="exampleInputEmail1" class="mb-2">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-            </div>
-        </section>
-        <section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes3">
-            <label asp-for="Browsers" class="form-label text-center fw-bold"></label>
-            <br />
-            <input type="checkbox" id="checkall3">
-            <label for="checkall3" class="mb-2">Select/Deselect All</label>
-            @for (int i = 0; i < Model.Browsers.Count; i++)
-            {
-                    
+			</div>
 
-                <div class="form-check">
-                    <input class="form-check-input" asp-for="@Model.Browsers[i].IsSelected">
-                    <label class="form-check-label" asp-for="@Model.Browsers[i].IsSelected">
-                        @Model.Browsers[i].DisplayName
-                    </label>
-                    <input type="hidden" asp-for="@Model.Browsers[i].DisplayName">
-                    <input type="hidden" asp-for="@Model.Browsers[i].Value">
-                </div>
-            }
-        </section>
-    </div>
+			<button type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				Add New Email
+			</button>
 
-        <div class="row my-5">
-            <input class="col-lg-2 btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="submit" value="Run Test" id="TCSubmit">
-        </div>
-    </form>
+			<div class="form-group collapse border rounded p-3" id="collapseExample">
+				<label for="exampleInputEmail1" class="mb-2">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+				<!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+			</div>
+		</section>
+		<section class="col-lg-5 shadow rounded offset-lg-1 px-4 py-3" id="checkboxes3">
+			<label asp-for="Browsers" class="form-label text-center fw-bold"></label>
+			<br />
+			<input type="checkbox" id="checkall3">
+			<label for="checkall3" class="mb-2">Select/Deselect All</label>
+			@for (int i = 0; i < Model.Browsers.Count; i++)
+			{
+
+
+				<div class="form-check">
+					<input class="form-check-input" asp-for="@Model.Browsers[i].IsSelected">
+					<label class="form-check-label" asp-for="@Model.Browsers[i].IsSelected">
+						@Model.Browsers[i].DisplayName
+					</label>
+					<input type="hidden" asp-for="@Model.Browsers[i].DisplayName">
+					<input type="hidden" asp-for="@Model.Browsers[i].Value">
+				</div>
+			}
+		</section>
+	</div>
+
+	<div class="row my-5">
+		<input class="col-lg-2 btn btn-dark" type="submit" value="Run Test" id="TCSubmit">
+	</div>
+</form>
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
-            <lottie-player class="mx-auto" src="https://assets8.lottiefiles.com/private_files/lf30_stxf8wrq.json" background="transparent" speed="1" style="width: 525px; height: 300px;" loop autoplay></lottie-player>
+			<lottie-player class="mx-auto" src="https://assets8.lottiefiles.com/private_files/lf30_stxf8wrq.json" background="transparent" speed="1" style="width: 525px; height: 300px;" loop autoplay></lottie-player>
 			<p class="text-center mb-4">Setting Up Automated Testing...</p>
 		</div>
 	</div>
 </div>
-    
-    @section Scripts 
-    {
-        <script type="text/javascript">
-            const isEmailValid = (email) => {
-                return String(email)
-                    .toLowerCase()
-                    .match(
-                        /^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                    );
-            };
-            $("button.col-2.offset-lg-4").click(() => {
-                let emailElement = $(this).closest("label");
 
-                $.ajax({
-                    type: "POST",
-                    url: '@Url.Action("RemoveEmail")',
-                    data: emailElement.serialize(),
-                    success: html => {
-                        window.location.href = "@Url.Action("Dashboard")";
-                    }
-                });
+@section Scripts
+{
+	<script type="text/javascript">
+		const isEmailValid = (email) => {
+			return String(email)
+				.toLowerCase()
+				.match(
+					/^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+				);
+		};
 
-            });
-            //$('form').submit(function (event){  this makes all events preventDefault()
-            //    console.log(event);
-            //    event.preventDefault();
-            //    form.reset();
-            //    return false;
-            //})
-            //function ThePathway(event, clicked_id) { this is meant to redirect to other functions depending on the ID 
-            //    alert(clicked_id);
-            //}
-            $('form').on('keypress', function (event) {
-                console.log(event);
-                if (event.keyCode === 13) {
-                    event.preventDefault();
-                    form.reset();
-                    return false;
-                }
-            })
-            $("#addEmailButton").click(() => {
-                let emailElement = $("#exampleInputEmail1");
+		$("button.col-2.offset-lg-4").click(event => {
+			let selectedEmail = $(event.target).prev();
 
-            let email = emailElement.val();
+			let formData = new FormData();
+			formData.append("email", selectedEmail.val());
 
-            if (email == "") return;
+			$.ajax({
+				type: "POST",
+				url: '@Url.Action("RemoveEmail")',
+				data: formData,
+				processData: false,
+				contentType: false,
+				success: html => {
+					window.location.reload();
+				}
+			});
 
-            if (!isEmailValid(email))
-            {
-                emailElement.val("");
-                alert("Email is not valid");
-                return;
-            }
+		});
 
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("AddEmail")',
-                data: emailElement.serialize(),
-                success: html => {
-                    window.location.href = "@Url.Action("Dashboard")";
-                }
-            });
+		//$('form').submit(function (event){  this makes all events preventDefault()
+		//    console.log(event);
+		//    event.preventDefault();
+		//    form.reset();
+		//    return false;
+		//})
+		//function ThePathway(event, clicked_id) { this is meant to redirect to other functions depending on the ID
+		//    alert(clicked_id);
+		//}
 
-        });
-        //OS
-        function toggleChecked1(status1) {
-            $("#checkboxes1 input").each(function () {
-                $(this).prop("checked", status1);
-            });
-        }
-        $(document).ready(function () {
-            var checkAllBox1 = $("#checkall1");
-            checkAllBox1.prop('checked', true);
-            checkAllBox1.click(function () {
-                var status1 = checkAllBox1.prop('checked');
-                toggleChecked1(status1);
-            });
-        });
-        //Test case
-        function toggleChecked2(status2) {
-            $("#checkboxes2 input").each(function () {
-                $(this).prop("checked", status2);
-            });
-        }
-        $(document).ready(function () {
-            var checkAllBox2 = $("#checkall2");
-            checkAllBox2.prop('checked', true);
-            checkAllBox2.click(function () {
-                var status2 = checkAllBox2.prop('checked');
-                toggleChecked2(status2);
-            });
-        });
-        //Browser
-        function toggleChecked3(status3) {
-            $("#checkboxes3 input").each(function () {
-                $(this).prop("checked", status3);
-            });
-        }
-        $(document).ready(function () {
-            var checkAllBox3 = $("#checkall3");
-            checkAllBox3.prop('checked', true);
-            checkAllBox3.click(function () {
-                var status3 = checkAllBox3.prop('checked');
-                toggleChecked3(status3);
-            });
-        });
-        $(document).ready(function () {
-            $("form").submit(function (event) {
-                var valid = true;
-                $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
-                    if (!$(this).find("input[type='checkbox']:checked").length) {
-                        alert($(this).text())
-                        valid = false;
-                    }
-                });
-                if (!valid) {
-                    event.preventDefault();
-                }
-            });
-            //OS
-            function toggleChecked1(status1) {
-                $("#checkboxes1 input").each(function () {
-                    $(this).prop("checked", status1);
-                });
-            }
-            $(document).ready(function () {
-                var checkAllBox1 = $("#checkall1");
-                checkAllBox1.prop('checked', true);
-                checkAllBox1.click(function () {
-                    var status1 = checkAllBox1.prop('checked');
-                    toggleChecked1(status1);
-                });
-            });
-            //Test case
-            function toggleChecked2(status2) {
-                $("#checkboxes2 input").each(function () {
-                    $(this).prop("checked", status2);
-                });
-            }
-            $(document).ready(function () {
-                var checkAllBox2 = $("#checkall2");
-                checkAllBox2.prop('checked', true);
-                checkAllBox2.click(function () {
-                    var status2 = checkAllBox2.prop('checked');
-                    toggleChecked2(status2);
-                });
-            });
-            //Browser
-            function toggleChecked3(status3) {
-                $("#checkboxes3 input").each(function () {
-                    $(this).prop("checked", status3);
-                });
-            }
-            $(document).ready(function () {
-                var checkAllBox3 = $("#checkall3");
-                checkAllBox3.prop('checked', true);
-                checkAllBox3.click(function () {
-                    var status3 = checkAllBox3.prop('checked');
-                    toggleChecked3(status3);
-                });
-            });
-            $(document).ready(function () {
-                $("form").submit(function (event) {
-                    var valid = true;
-                    $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
-                        if (!$(this).find("input[type='checkbox']:checked").length) {
-                            alert($(this).text())
-                            valid = false;
-                        }
-                    });
-                    if (!valid) {
-                        event.preventDefault();
-                    }
-                });
-            });
+		$('form').on('keypress', function (event) {
+			console.log(event);
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				form.reset();
+				return false;
+			}
+		});
+
+		$("#addEmailButton").click(() => {
+			let emailElement = $("#exampleInputEmail1");
+
+			let email = emailElement.val();
+
+			if (email == "") return;
+
+			if (!isEmailValid(email)) {
+				emailElement.val("");
+				alert("Email is not valid");
+				return;
+			}
+
+			$.ajax({
+				type: "POST",
+				url: '@Url.Action("AddEmail")',
+				data: emailElement.serialize(),
+				success: html => {
+					window.location.reload();
+				}
+			});
+
+		});
 
 
-        </script>
-    }
-</body>
-</html>
+
+
+
+
+		// CHECKBOX VALIDATION
+
+
+
+		//OS
+		function toggleChecked1(status1) {
+			$("#checkboxes1 input").each(function () {
+				$(this).prop("checked", status1);
+			});
+		}
+		$(document).ready(function () {
+			var checkAllBox1 = $("#checkall1");
+			checkAllBox1.prop('checked', true);
+			checkAllBox1.click(function () {
+				var status1 = checkAllBox1.prop('checked');
+				toggleChecked1(status1);
+			});
+		});
+		//Test case
+		function toggleChecked2(status2) {
+			$("#checkboxes2 input").each(function () {
+				$(this).prop("checked", status2);
+			});
+		}
+		$(document).ready(function () {
+			var checkAllBox2 = $("#checkall2");
+			checkAllBox2.prop('checked', true);
+			checkAllBox2.click(function () {
+				var status2 = checkAllBox2.prop('checked');
+				toggleChecked2(status2);
+			});
+		});
+		//Browser
+		function toggleChecked3(status3) {
+			$("#checkboxes3 input").each(function () {
+				$(this).prop("checked", status3);
+			});
+		}
+		$(document).ready(function () {
+			var checkAllBox3 = $("#checkall3");
+			checkAllBox3.prop('checked', true);
+			checkAllBox3.click(function () {
+				var status3 = checkAllBox3.prop('checked');
+				toggleChecked3(status3);
+			});
+		});
+		
+		$(document).ready(function () {
+			$("form").submit(function (event) {
+				var valid = true;
+				$("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
+					if (!$(this).find("input[type='checkbox']:checked").length) {
+						alert($(this).text())
+						valid = false;
+					}
+				});
+
+				if (!valid) {
+					event.preventDefault();
+				}
+				else {
+					const myModalAlternative = new bootstrap.Modal('#staticBackdrop');
+					myModalAlternative.show();
+				}
+			});
+		});
+
+
+	</script>
+}
