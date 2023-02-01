@@ -14,9 +14,11 @@ namespace Automation_Website.Controllers
 
         private const string GITHUB_API_URL = "https://api.github.com/repos/LeoYunTao/PFD-Team-A-Automation/actions";
 
-
-        public ActionResult Dashboard()
+		public ActionResult Dashboard()
         {
+
+            HttpContext.Session.SetString("api", System.Configuration.ConfigurationManager.AppSettings["GITHUB_API_KEY"]);
+
             if (HttpContext.Session.GetString("dashboardViewModel") == null)
             {
                 DashboardViewModel newDashboardViewModel = new DashboardViewModel()
@@ -140,6 +142,8 @@ namespace Automation_Website.Controllers
                 testStatusViewModel.ArtifactList = artifactList;
             }
 
+            TempData["api"] = HttpContext.Session.GetString("api");
+
             return View(testStatusViewModel);
         }
 
@@ -234,7 +238,7 @@ namespace Automation_Website.Controllers
         {
             RestRequest request = new RestRequest();
             request.AddHeader("Accept", "application/vnd.github+json");
-            request.AddHeader("Authorization", "Bearer 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");
+            request.AddHeader("Authorization", $"Bearer {HttpContext.Session.GetString("api")}");
             request.AddHeader("X-GitHub-Api-Version", "2022-11-28");
             request.AddHeader("Content-Type", "application/json");
 

@@ -218,7 +218,6 @@ C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\tr\Microsoft.CodeAn
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
@@ -494,3 +493,5 @@ C:\Users\matthew\Desktop\PFD\WebsiteNew\obj\Debug\net6.0\refint\Automation Websi
 C:\Users\matthew\Desktop\PFD\WebsiteNew\obj\Debug\net6.0\Automation Website.pdb
 C:\Users\matthew\Desktop\PFD\WebsiteNew\obj\Debug\net6.0\Automation Website.genruntimeconfig.cache
 C:\Users\matthew\Desktop\PFD\WebsiteNew\obj\Debug\net6.0\ref\Automation Website.dll
+C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\app.config
+C:\Users\Leoyu\Documents\PFD-Team-A-Website\bin\Debug\net6.0\Automation Website.dll.config

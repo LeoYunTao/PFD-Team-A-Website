@@ -1,6 +1,4 @@
-﻿@model TestStatusViewModel
-
-@{
+﻿@{
 	ViewData["Title"] = "Index";
 
 	Dictionary<string, string> statusToClass = new Dictionary<string, string>()
@@ -130,7 +128,7 @@
 			$(".artifact-download").click(event => {
 
 				var myHeaders = new Headers();
-				myHeaders.append("Authorization", "Bearer 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");
+				myHeaders.append("Authorization", "Bearer @(TempData["api"])");
 
 				var requestOptions = {
 					method: 'GET',
