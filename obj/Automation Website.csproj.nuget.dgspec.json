@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\Automation Website.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Leoyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\School\\PFD\\Website\\Automation Website.csproj": {}
-  },
-  "projects": {
-    "C:\\School\\PFD\\Website\\Automation Website.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\School\\PFD\\Website\\Automation Website.csproj",
-        "projectName": "Automation Website",
-        "projectPath": "C:\\School\\PFD\\Website\\Automation Website.csproj",
-        "packagesPath": "C:\\Users\\terre\\.nuget\\packages\\",
-        "outputPath": "C:\\School\\PFD\\Website\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\terre\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

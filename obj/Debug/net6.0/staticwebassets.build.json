@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "Hash": "qTf+mUynYe+IQ+8fNbaBuVzwx2o5bh5sdTkVLuOg1Bk=",
-=======
-  "Hash": "w+OQWIQrSRzwGXZBDBqhbW1qDOniO7QPX5+x/cBf8go=",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
   "Source": "Automation Website",
   "BasePath": "_content/Automation Website",
   "Mode": "Default",
@@ -14,28 +10,17 @@
     {
       "Name": "Automation Website\\wwwroot",
       "Source": "Automation Website",
-<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\",
-=======
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
       "SourceId": "Automation Website",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-=======
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
-      "SourceId": "Automation Website",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.styles.css",
       "AssetKind": "All",
@@ -46,7 +31,6 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
     },
     {
@@ -54,15 +38,6 @@
       "SourceId": "Automation Website",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-=======
-      "OriginalItemSpec": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
-    },
-    {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
-      "SourceId": "Automation Website",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.bundle.scp.css",
       "AssetKind": "All",
@@ -73,7 +48,6 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
     },
     {
@@ -81,15 +55,6 @@
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\",
-=======
-      "OriginalItemSpec": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
-    },
-    {
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\css\\site.css",
-      "SourceId": "Automation Website",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -103,17 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\favicon.ico",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\",
-=======
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\favicon.ico",
-      "SourceId": "Automation Website",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -127,17 +85,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\js\\site.js",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\wwwroot\\",
-=======
-      "Identity": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\js\\site.js",
-      "SourceId": "Automation Website",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team-A-Website\\wwwroot\\",
->>>>>>> fffb3f32f0ffa11c5cbc99169e85f9024064a9b1
       "BasePath": "_content/Automation Website",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
