@@ -219,7 +219,7 @@
                     var valid = true;
                     $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
                         if (!$(this).find("input[type='checkbox']:checked").length) {
-                            alert($(this).text())
+                            alert("Please fill in the " + $(this).find("label").first().text() + " section");
                             valid = false;
                         }
                     });
