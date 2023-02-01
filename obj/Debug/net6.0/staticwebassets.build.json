@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FMddDUz4H05CpR353aNgqFSSlHOnhLmVv8MSgQcTmQY=",
+  "Hash": "EJZkTIzTh/u52tnNX0V7RAw1wtU4eWNsQgdgF9Sqj7Y=",
   "Source": "Automation Website",
   "BasePath": "_content/Automation Website",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
     },
     {
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\app.config",
+      "SourceId": "Automation Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
+      "BasePath": "_content/Automation Website",
+      "RelativePath": "app.config",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.config"
+    },
+    {
       "Identity": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\images\\negative-button.png",
+      "SourceId": "Automation Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
+      "BasePath": "_content/Automation Website",
+      "RelativePath": "images/negative-button.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\negative-button.png"
     },
     {
       "Identity": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",

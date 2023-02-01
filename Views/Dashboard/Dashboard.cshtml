@@ -40,6 +40,7 @@
         </div>
     </div>
     <form asp-controller="Dashboard" asp-action="TestStatus" method="post" class="container">
+        @*onsubmit="return false"*@
         <div class="row">
             <section class="col-lg-5 shadow rounded px-4 py-3" id="checkboxes1">
                 <label asp-for="OperatingSystems" class="form-label fw-bold"></label>
@@ -81,18 +82,23 @@
                     <label asp-for="Emails" class="form-label fw-bold mb-2"></label>
                     @for (int i = 0; i < Model.Emails.Count; i++)
                     {
-                        <div class="form-check ps-0">
-                            <input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
-                            <label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
-                                @Model.Emails[i].Value
-                            </label>
-                            <input type="hidden" asp-for="@Model.Emails[i].Value">
+                        <div class="row">
+                            <div class="col-6 form-check ps-0">
+                                <input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
+                                <label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
+                                    @Model.Emails[i].Value
+                                </label>
+                                <input type="hidden" asp-for="@Model.Emails[i].Value">
+                            </div>
+                            <button type="button" class="col-2 offset-lg-4">
+                                <img src="~/images/negative-button.png" alt="remove" class="img-fluid"/>
+                            </button>
                         </div>
                     }
                     
                 </div>
                 
-                <button type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button onclick="myFunction();" type="button" class="btn btn-dark mt-2 mb-3" id="addEmailButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Add New Email
                 </button>
 
@@ -124,7 +130,7 @@
         </div>
 
         <div class="row my-5">
-            <input class="col-lg-2 btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="submit" value="Run Test">
+            <input class="col-lg-2 btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="submit" value="Run Test" id="TCSubmit">
         </div>
     </form>
 
@@ -147,7 +153,36 @@
                         /^(([^<>()[\]\\.,;:\s@@"]+(\.[^<>()[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                     );
             };
+            $("button.col-2.offset-lg-4").click(() => {
+                let emailElement = $(this).closest("label");
 
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("RemoveEmail")',
+                    data: emailElement.serialize(),
+                    success: html => {
+                        window.location.href = "@Url.Action("Dashboard")";
+                    }
+                });
+
+            });
+            //$('form').submit(function (event){  this makes all events preventDefault()
+            //    console.log(event);
+            //    event.preventDefault();
+            //    form.reset();
+            //    return false;
+            //})
+            //function ThePathway(event, clicked_id) { this is meant to redirect to other functions depending on the ID 
+            //    alert(clicked_id);
+            //}
+            $('form').on('keypress', function (event) {
+                console.log(event);
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    form.reset();
+                    return false;
+                }
+            })
             $("#addEmailButton").click(() => {
                 let emailElement = $("#exampleInputEmail1");
 
@@ -228,6 +263,8 @@
                     }
                 });
             });
+
+
         </script>
     }
 </body>

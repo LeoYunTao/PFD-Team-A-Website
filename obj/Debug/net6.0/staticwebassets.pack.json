@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\Automation Website.bundle.scp.css"
     },
     {
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\app.config",
+      "PackagePath": "staticwebassets\\app.config"
+    },
+    {
       "Id": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\School\\PFD\\Website\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\images\\negative-button.png",
+      "PackagePath": "staticwebassets\\images\\negative-button.png"
     },
     {
       "Id": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",
