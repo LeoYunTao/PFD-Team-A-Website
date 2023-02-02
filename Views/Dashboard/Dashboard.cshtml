@@ -204,80 +204,64 @@
 				}
 			});
 
-		});
-
-
-
-
-
-
-		// CHECKBOX VALIDATION
-
-
-
-		//OS
-		function toggleChecked1(status1) {
-			$("#checkboxes1 input").each(function () {
-				$(this).prop("checked", status1);
-			});
-		}
-		$(document).ready(function () {
-			var checkAllBox1 = $("#checkall1");
-			checkAllBox1.prop('checked', true);
-			checkAllBox1.click(function () {
-				var status1 = checkAllBox1.prop('checked');
-				toggleChecked1(status1);
-			});
-		});
-		//Test case
-		function toggleChecked2(status2) {
-			$("#checkboxes2 input").each(function () {
-				$(this).prop("checked", status2);
-			});
-		}
-		$(document).ready(function () {
-			var checkAllBox2 = $("#checkall2");
-			checkAllBox2.prop('checked', true);
-			checkAllBox2.click(function () {
-				var status2 = checkAllBox2.prop('checked');
-				toggleChecked2(status2);
-			});
-		});
-		//Browser
-		function toggleChecked3(status3) {
-			$("#checkboxes3 input").each(function () {
-				$(this).prop("checked", status3);
-			});
-		}
-		$(document).ready(function () {
-			var checkAllBox3 = $("#checkall3");
-			checkAllBox3.prop('checked', true);
-			checkAllBox3.click(function () {
-				var status3 = checkAllBox3.prop('checked');
-				toggleChecked3(status3);
-			});
-		});
-		
-		$(document).ready(function () {
-			$("form").submit(function (event) {
-				var valid = true;
-				$("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
-					if (!$(this).find("input[type='checkbox']:checked").length) {
-						alert($(this).text())
-						valid = false;
-					}
-				});
-
-				if (!valid) {
-					event.preventDefault();
-				}
-				else {
-					const myModalAlternative = new bootstrap.Modal('#staticBackdrop');
-					myModalAlternative.show();
-				}
-			});
-		});
-
-
-	</script>
-}
+            });
+            //OS
+            function toggleChecked1(status1) {
+                $("#checkboxes1 input").each(function () {
+                    $(this).prop("checked", status1);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox1 = $("#checkall1");
+                checkAllBox1.prop('checked', true);
+                checkAllBox1.click(function () {
+                    var status1 = checkAllBox1.prop('checked');
+                    toggleChecked1(status1);
+                });
+            });
+            //Test case
+            function toggleChecked2(status2) {
+                $("#checkboxes2 input").each(function () {
+                    $(this).prop("checked", status2);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox2 = $("#checkall2");
+                checkAllBox2.prop('checked', true);
+                checkAllBox2.click(function () {
+                    var status2 = checkAllBox2.prop('checked');
+                    toggleChecked2(status2);
+                });
+            });
+            //Browser
+            function toggleChecked3(status3) {
+                $("#checkboxes3 input").each(function () {
+                    $(this).prop("checked", status3);
+                });
+            }
+            $(document).ready(function () {
+                var checkAllBox3 = $("#checkall3");
+                checkAllBox3.prop('checked', true);
+                checkAllBox3.click(function () {
+                    var status3 = checkAllBox3.prop('checked');
+                    toggleChecked3(status3);
+                });
+            });
+            $(document).ready(function () {
+                $("form").submit(function (event) {
+                    var valid = true;
+                    $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
+                        if (!$(this).find("input[type='checkbox']:checked").length) {
+                            alert("Please fill in the " + $(this).find("label").first().text() + " section");
+                            valid = false;
+                        }
+                    });
+                    if (!valid) {
+                        event.preventDefault();
+                    }
+                });
+            });
+        </script>
+    }
+</body>
+</html>
