@@ -48,9 +48,17 @@ namespace Automation_Website.Models
             string operatingSystems = ToString(OperatingSystems, stringEnclose: true);
             string testCases = ToString(TestCases);
             string browsers = ToString(Browsers);
-            string emails = ToString(Emails, delimeter: ' ');
 
-            return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}"", ""emails"": ""{3}""}}", operatingSystems, testCases, browsers, emails);
+            if (Emails != null)
+            {
+				string emails = ToString(Emails, delimeter: ' ');
+
+				return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}"", ""emails"": ""{3}""}}", operatingSystems, testCases, browsers, emails);
+			}
+            else
+            {
+				return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}""}}", operatingSystems, testCases, browsers);
+			}
         }
     }
 

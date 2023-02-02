@@ -257,6 +257,11 @@
                     if (!valid) {
                         event.preventDefault();
                     }
+					else
+					{
+						const myModalAlternative = new bootstrap.Modal('#staticBackdrop');
+						myModalAlternative.show();
+					}
                 });
             });
         </script>
