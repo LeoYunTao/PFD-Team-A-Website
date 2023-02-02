@@ -13,8 +13,4 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\History\" />
-  </ItemGroup>
-
 </Project>

@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Index";
+	ViewData["Title"] = "Test Status";
 
 	Dictionary<string, string> statusToClass = new Dictionary<string, string>()
 	{
@@ -16,132 +16,120 @@
 	};
 }
 
-<!DOCTYPE html>
+<h1 class="mt-4">Test Status</h1>
+<p>Run ID: @Model.RunId</p>
 
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width = device-width,
- initial-scale = 1" />
-	<title>Test Status</title>
-</head>
-<body>
-	<h1 class="mt-4">Test Status</h1>
-	<p>Run ID: @Model.RunId</p>
-
-	<p class="mb-5">
-		Time elasped: <span id="timeElasped">
-			@if (Model.TimeFinished != null)
-			{
-				<text>@Model.FormatTime((TimeSpan)(Model.TimeFinished - Model.TimeStarted))</text>
-			}
-		</span>
-	</p>
-
-	<div class="d-flex align-items-start justify-content-between">
-		<div>
-			<h3 class="text-capitalize">Status: @Model.Conclusion</h3>
-			<p>Last Update: @DateTime.Now.ToString("yyyy-MM-dd hh:mmtt")</p>
-		</div>
-
-		<button onclick="window.location.reload()" class="btn btn-dark">Update Status</button>
-	</div>
-
-	<div class="row gx-5 mb-5">
-		@foreach (TestStatus testStatus in Model.TestStatusList)
+<p class="mb-5">
+	Time elasped: <span id="timeElasped">
+		@if (Model.TimeFinished != null)
 		{
-			<div class="col-lg-4">
-				<div class="card shadow">
-					<div class="card-body rounded rounded-bottom-0 @statusToClass[testStatus.Status]">
-					</div>
-					<div class="card-footer text-center text-muted">
-						@statusDisplay[testStatus.Name]
-					</div>
-				</div>
-			</div>
+			<text>@Model.FormatTime((TimeSpan)(Model.TimeFinished - Model.TimeStarted))</text>
 		}
+	</span>
+</p>
+
+<div class="d-flex align-items-start justify-content-between">
+	<div>
+		<h3 class="text-capitalize">Status: @Model.Conclusion</h3>
+		<p>Last Update: @DateTime.Now.ToString("yyyy-MM-dd hh:mmtt")</p>
 	</div>
 
-	@if (Model.ArtifactList != null)
+	<button onclick="window.location.reload()" class="btn btn-dark">Update Status</button>
+</div>
+
+<div class="row gx-5 mb-5">
+	@foreach (TestStatus testStatus in Model.TestStatusList)
 	{
-		<div class="accordion mb-5" id="accordionExample">
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-						Download Test Results
-					</button>
-				</h2>
-				<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-					<div class="accordion-body">
-						@foreach (Artifact artifact in Model.ArtifactList)
-						{
-							<button class="artifact-download btn btn-link" download-url="@artifact.archive_download_url">@artifact.name</button>
-						}
-					</div>
+		<div class="col-lg-4">
+			<div class="card shadow">
+				<div class="card-body rounded rounded-bottom-0 @statusToClass[testStatus.Status]">
+				</div>
+				<div class="card-footer text-center text-muted">
+					@statusDisplay[testStatus.Name]
 				</div>
 			</div>
 		</div>
 	}
+</div>
 
-	<form asp-controller="Dashboard" asp-action="CancelTest" asp-route-id="@Model.RunId" method="post">
-		<button @(Model.Conclusion != "running" ? "disabled" : "" ) class="btn btn-danger">Cancel Test</button>
-	</form>
+@if (Model.ArtifactList != null)
+{
+	<div class="accordion mb-5" id="accordionExample">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingOne">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					Download Test Results
+				</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+					@foreach (Artifact artifact in Model.ArtifactList)
+					{
+						<button class="artifact-download btn btn-link" download-url="@artifact.archive_download_url">@artifact.name</button>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+}
 
-	@section Scripts
-		{
-		<script type="text/javascript">
-			function blink() {
-				$(".blink").addClass('background-grey-transtion');
-				$(".blink").css("background", "#EAEAEA").delay(2000).queue(() => {
-					$(".blink").css("background", "white").dequeue();
-				});
-			}
+<form asp-controller="Dashboard" asp-action="CancelTest" asp-route-id="@Model.RunId" method="post">
+	<button @(Model.Conclusion != "running" ? "disabled" : "" ) class="btn btn-danger">Cancel Test</button>
+</form>
 
-			blink();
-			setInterval(blink, 4000);
-
-			function millisToMinutesAndSeconds(millis) {
-				var minutes = Math.floor(millis / 60000);
-				var seconds = ((millis % 60000) / 1000).toFixed(0);
-				return minutes + "min " + (seconds < 10 ? '0' : '') + seconds + "sec";
-			}
-
-
-			function calculateTimeElasped() {
-				let dateTimeNow = new Date();
-				let dateTimeStarted = new Date(@(new DateTimeOffset(Model.TimeStarted).ToUnixTimeMilliseconds()));
-
-				$("#timeElasped").text(millisToMinutesAndSeconds(dateTimeNow - dateTimeStarted));
-			}
-
-			@if (Model.TimeFinished == null)
-			{
-				<text>
-					calculateTimeElasped();
-					setInterval(calculateTimeElasped, 1000);
-				</text>
-			}
-
-			setInterval(() => window.location.reload(), 1000 * 60);
-
-
-			$(".artifact-download").click(event => {
-
-				var myHeaders = new Headers();
-				myHeaders.append("Authorization", "Bearer @(TempData["api"])");
-
-				var requestOptions = {
-					method: 'GET',
-					headers: myHeaders,
-					redirect: 'follow'
-				};
-
-				fetch(event.target.getAttribute("download-url"), requestOptions)
-					.then(response => window.open(response.url, '_blank'))
-					.catch(error => console.log('error', error));
+@section Scripts
+	{
+	<script type="text/javascript">
+		function blink() {
+			$(".blink").addClass('background-grey-transtion');
+			$(".blink").css("background", "#EAEAEA").delay(2000).queue(() => {
+				$(".blink").css("background", "white").dequeue();
 			});
+		}
 
-		</script>
-	}
-	</body>
-	</html>
+		blink();
+		setInterval(blink, 4000);
+
+		function millisToMinutesAndSeconds(millis) {
+			var minutes = Math.floor(millis / 60000);
+			var seconds = ((millis % 60000) / 1000).toFixed(0);
+			return minutes + "min " + (seconds < 10 ? '0' : '') + seconds + "sec";
+		}
+
+
+		function calculateTimeElasped() {
+			let dateTimeNow = new Date();
+			let dateTimeStarted = new Date(@(new DateTimeOffset(Model.TimeStarted).ToUnixTimeMilliseconds()));
+
+			$("#timeElasped").text(millisToMinutesAndSeconds(dateTimeNow - dateTimeStarted));
+		}
+
+		@if (Model.TimeFinished == null)
+		{
+			<text>
+				calculateTimeElasped();
+				setInterval(calculateTimeElasped, 1000);
+			</text>
+		}
+
+		setInterval(() => window.location.reload(), 1000 * 60);
+
+
+		$(".artifact-download").click(event => {
+
+			var myHeaders = new Headers();
+			myHeaders.append("Authorization", "Bearer @Context.Session.GetString("api")");
+
+			var requestOptions = {
+				method: 'GET',
+				headers: myHeaders,
+				redirect: 'follow'
+			};
+
+			fetch(event.target.getAttribute("download-url"), requestOptions)
+				.then(response => window.open(response.url, '_blank'))
+				.catch(error => console.log('error', error));
+		});
+
+	</script>
+}

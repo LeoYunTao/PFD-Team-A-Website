@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\Views",
+    "\\Views\\Dashboard",
+    "\\wwwroot",
+    "\\wwwroot\\js"
   ],
+  "SelectedNode": "\\Automation Website.sln",
   "PreviewInSolutionExplorer": false
 }
