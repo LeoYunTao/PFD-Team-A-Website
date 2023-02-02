@@ -1,0 +1,136 @@
+﻿@model HistoryViewModel
+
+@{
+	ViewData["Title"] = "History";
+
+	int currentPageNumber = 1;
+	Int32.TryParse(Context.Request.RouteValues["id"].ToString(), out currentPageNumber);
+
+	List<string> conclusionList = new List<string> { "All", "Running", "Success", "Failure", "Cancelled" };
+}
+
+
+<h1 class="mt-4 mb-4">History</h1>
+
+<p>Found @Model.SWorkflowRuns.total_count Results</p>
+
+<div class="row mb-4">
+	<div class="col-lg-5">
+		<label class="form-label" for="conclusion">Filter by Status</label>
+		<select class="form-select" id="conclusion" aria-label="Default select example">
+			@for (int i = 0; i < conclusionList.Count; i++)
+			{
+
+				if (conclusionList[i] == Model.Conclusion)
+				{
+					<option value="@conclusionList[i]" selected>@conclusionList[i]</option>
+				}
+				else
+				{
+					<option value="@conclusionList[i]">@conclusionList[i]</option>
+				}
+			}
+		</select>
+	</div>
+	<div class="col-lg-5">
+		<label class="form-label" for="dates">Filter by Date</label>
+		<input class="form-control" value="@(Model.Created == null ? "All" : Model.Created.Replace("..", " - "))" readonly name="dates" id="dates" />
+	</div>
+	<div class="col-lg-2 d-flex">
+		<button class="btn-primary btn ms-auto mt-auto" onclick="window.location.reload()">Search</button>
+	</div>
+</div>
+
+@foreach (WorkflowRun workflowRun in Model.SWorkflowRuns.workflow_runs)
+{
+	<div class="card mb-3">
+		<div class="card-header">
+			Ran on: @workflowRun.created_at.ToString("d MMMM yyyy hh:mm tt") utc
+		</div>
+		<div class="card-body d-flex justify-content-between align-items-center">
+			<div>
+				<h5 class="card-title">Test: @workflowRun.id</h5>
+				<p class="card-text text-capitalize">Status: @(workflowRun.conclusion == null ? "running" : workflowRun.conclusion)</p>
+			</div>
+			<a asp-controller="Dashboard" asp-action="TestStatus" asp-route-id="@workflowRun.id" class="btn btn-primary">View Details</a>
+		</div>
+	</div>
+}
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+		<li class="page-item @(currentPageNumber <= 1 ? "disabled" : "")"><a class="page-link" asp-action="Index" asp-route-id="@(currentPageNumber-1)">Previous</a></li>
+		@if (currentPageNumber > 1)
+		{
+			<li class="page-item"><a class="page-link" asp-action="Index" asp-route-conclusion="@(Model.Conclusion)" asp-route-created="@(Model.Created)" asp-route-id="@(currentPageNumber-1)">@(currentPageNumber - 1)</a></li>
+		}
+		<li class="page-item active"><a class="page-link" asp-action="Index" asp-route-conclusion="@(Model.Conclusion)" asp-route-created="@(Model.Created)" asp-route-id="@(currentPageNumber)">@(currentPageNumber)</a></li>
+		<li class="page-item"><a class="page-link" asp-action="Index" asp-route-conclusion="@(Model.Conclusion)" asp-route-created="@(Model.Created)" asp-route-id="@(currentPageNumber+1)">@(currentPageNumber + 1)</a></li>
+		@if (currentPageNumber <= 1)
+		{
+			<li class="page-item"><a class="page-link" asp-action="Index" asp-route-conclusion="@(Model.Conclusion)" asp-route-created="@(Model.Created)" asp-route-id="@(currentPageNumber + 2)">@(currentPageNumber + 2)</a></li>
+		}
+		<li class="page-item"><a class="page-link" asp-action="Index" asp-route-conclusion="@(Model.Conclusion)" asp-route-created="@(Model.Created)" asp-route-id="@(currentPageNumber+1)">Next</a></li>
+	</ul>
+</nav>
+
+@section Scripts
+	{
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script type="text/javascript">
+		$('input[name="dates"]').daterangepicker({
+			opens: 'right',
+			autoUpdateInput: false,
+			locale: {
+				cancelLabel: 'Clear',
+				format: "YYYY-MM-DD"
+			}
+		}, (start, end, label) => {
+			let value = $('input[name="dates"]').val().replace(" - ", "..");
+			
+			const url = new URL(location.href);
+			url.searchParams.set("created", value);
+
+			history.pushState(null, '', url);
+		});
+
+		$("#conclusion").on("input", () => {
+			let value = $('#conclusion').val();
+			const url = new URL(location.href);
+
+			if (value != "All")
+			{
+				url.searchParams.set("conclusion", value);
+			}
+			else
+			{
+				url.searchParams.delete("conclusion");
+			}
+
+			history.pushState(null, '', url);
+		});
+
+		$('input[name="dates"]').on('apply.daterangepicker', function (ev, picker) {
+			$(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+
+			let value = $('input[name="dates"]').val().replace(" - ", "..");
+
+			const url = new URL(location.href);
+			url.searchParams.set("created", value);
+
+			history.pushState(null, '', url);
+		});
+
+		$('input[name="dates"]').on('cancel.daterangepicker', function (ev, picker) {
+			$(this).val('All');
+
+			const url = new URL(location.href);
+			url.searchParams.delete("created");
+			
+			history.pushState(null, '', url);
+
+		});
+	</script>
+}
