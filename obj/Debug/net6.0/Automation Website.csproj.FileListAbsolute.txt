@@ -465,7 +465,6 @@ C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\tr\Microsoft.CodeAnalys
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
@@ -991,3 +990,4 @@ C:\School\PFD\Website\obj\Debug\net6.0\Automation Website.pdb
 C:\School\PFD\Website\obj\Debug\net6.0\Automation Website.genruntimeconfig.cache
 C:\School\PFD\Website\obj\Debug\net6.0\ref\Automation Website.dll
 C:\School\PFD\Website\bin\Debug\net6.0\Automation Website.dll.config
+C:\Users\matthew\Desktop\PFD\WebsiteNew\bin\Debug\net6.0\Automation Website.dll.config
