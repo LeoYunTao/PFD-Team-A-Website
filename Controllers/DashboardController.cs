@@ -1,6 +1,7 @@
 ﻿using Automation_Website.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Automation_Website.Controllers
 {
@@ -13,43 +14,42 @@ namespace Automation_Website.Controllers
 
             HttpContext.Session.SetString("api", apiCall.API_KEY);
 
-            if (HttpContext.Session.GetString("dashboardViewModel") == null)
+            
+            DashboardViewModel dashboardViewModel = new DashboardViewModel()
             {
-                DashboardViewModel newDashboardViewModel = new DashboardViewModel()
+                Browsers = new List<Checkbox>
                 {
-                    Browsers = new List<Checkbox>
-                    {
-                        new Checkbox { IsSelected = true, DisplayName = "Chrome", Value = "chrome" },
-                        new Checkbox { IsSelected = true, DisplayName = "Micosoft Edge", Value = "edge" },
-                        new Checkbox { IsSelected = true, DisplayName = "Firefox", Value = "firefox" },
-                    },
-                    OperatingSystems = new List<Checkbox>
-                    {
-                        new Checkbox { IsSelected = true, DisplayName = "Ubuntu", Value = "ubuntu-20.04" },
-                        new Checkbox { IsSelected = true, DisplayName = "Windows", Value = "windows-latest" },
-                        new Checkbox { IsSelected = true, DisplayName = "Mac OS", Value = "macOS-latest" },
-                    },
-                    Emails = new List<Checkbox>
-                    {
-                    },
-                    TestCases = new List<Checkbox>
-                    {
-                        new Checkbox { IsSelected = true, Value = "test_apply_account" },
-                        new Checkbox { IsSelected = true, Value = "test_apply_loan" },
-                        new Checkbox { IsSelected = true, Value = "test_forgot_password" },
-                        new Checkbox { IsSelected = true, Value = "test_loan_status" },
-                        new Checkbox { IsSelected = true, Value = "test_login" },
-                        new Checkbox { IsSelected = true, Value = "test_register" },
-                        new Checkbox { IsSelected = true, Value = "test_transfer_funds" },
-                    },
-                };
+                    new Checkbox { IsSelected = true, DisplayName = "Chrome", Value = "chrome" },
+                    new Checkbox { IsSelected = true, DisplayName = "Micosoft Edge", Value = "edge" },
+                    new Checkbox { IsSelected = true, DisplayName = "Firefox", Value = "firefox" },
+                },
+                OperatingSystems = new List<Checkbox>
+                {
+                    new Checkbox { IsSelected = true, DisplayName = "Ubuntu", Value = "ubuntu-20.04" },
+                    new Checkbox { IsSelected = true, DisplayName = "Windows", Value = "windows-latest" },
+                    new Checkbox { IsSelected = true, DisplayName = "Mac OS", Value = "macOS-latest" },
+                },
+                Emails = new List<Checkbox>
+                {
+                },
+                TestCases = new List<Checkbox>
+                {
+                    new Checkbox { IsSelected = true, Value = "test_apply_account" },
+                    new Checkbox { IsSelected = true, Value = "test_apply_loan" },
+                    new Checkbox { IsSelected = true, Value = "test_forgot_password" },
+                    new Checkbox { IsSelected = true, Value = "test_loan_status" },
+                    new Checkbox { IsSelected = true, Value = "test_login" },
+                    new Checkbox { IsSelected = true, Value = "test_register" },
+                    new Checkbox { IsSelected = true, Value = "test_transfer_funds" },
+                },
+            };
 
-                HttpContext.Session.SetString("dashboardViewModel", JsonConvert.SerializeObject(newDashboardViewModel));
+            if (HttpContext.Session.GetString("emailList") == null)
+            {
+                string emailListString = JsonConvert.SerializeObject(dashboardViewModel.Emails);
+
+                HttpContext.Session.SetString("emailList", emailListString);
             }
-
-            string str = HttpContext.Session.GetString("dashboardViewModel");
-
-            DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str);
 
             return View(dashboardViewModel);
         }
@@ -78,56 +78,73 @@ namespace Automation_Website.Controllers
             }
         }
         [HttpPost]
-        public void AddEmail(IFormCollection formCollection)
+        public ActionResult AddEmail(IFormCollection formCollection)
         {
-            string str = HttpContext.Session.GetString("dashboardViewModel");
-
-			var settings = new JsonSerializerSettings
+			if (HttpContext.Session.GetString("emailList") == null)
 			{
-				NullValueHandling = NullValueHandling.Ignore,
-				MissingMemberHandling = MissingMemberHandling.Ignore
-			};
+				string emailListString = JsonConvert.SerializeObject(new List<Checkbox>());
 
-			DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str, settings);
+				HttpContext.Session.SetString("emailList", emailListString);
+			}
 
-            dashboardViewModel.Emails.Add(new Checkbox { IsSelected = true, Value = formCollection["email"] });
+			string emailListStr = HttpContext.Session.GetString("emailList");
 
-            HttpContext.Session.SetString("dashboardViewModel", JsonConvert.SerializeObject(dashboardViewModel));
-        }
+			List<Checkbox> emailList = JsonConvert.DeserializeObject<List<Checkbox>>(emailListStr);
+
+			emailList.Add(new Checkbox { IsSelected = true, Value = formCollection["email"] });
+
+            HttpContext.Session.SetString("emailList", JsonConvert.SerializeObject(emailList));
+
+			return StatusCode(200);
+		}
 
         [HttpPost]
-        public void RemoveEmail(IFormCollection formCollection)
+        public ActionResult RemoveEmail(IFormCollection formCollection)
         {
-            string str = HttpContext.Session.GetString("dashboardViewModel");
+			string emailListStr = HttpContext.Session.GetString("emailList");
 
-            DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str);
+			List<Checkbox> emailList = JsonConvert.DeserializeObject<List<Checkbox>>(emailListStr);
 
-            string emailToDelete = formCollection["email"].ToString();
+			string emailToDelete = formCollection["email"].ToString();
 
-            foreach (var i in formCollection.Keys)
-            {
-                System.Diagnostics.Debug.WriteLine(i);
-            }
+            //foreach (var i in formCollection.Keys)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(i);
+            //}
 
-            System.Diagnostics.Debug.WriteLine(emailToDelete);
+            //System.Diagnostics.Debug.WriteLine(emailToDelete);
 
-			foreach (Checkbox checkbox in dashboardViewModel.Emails)
+            foreach (Checkbox checkbox in emailList)
             {
                 if (emailToDelete == checkbox.Value)
                 {
-                    dashboardViewModel.Emails.Remove(checkbox);
+					emailList.Remove(checkbox);
                     break;
                 }
             }
 
-            HttpContext.Session.SetString("dashboardViewModel", JsonConvert.SerializeObject(dashboardViewModel));
-        }
+            HttpContext.Session.SetString("emailList", JsonConvert.SerializeObject(emailList));
+
+			return StatusCode(200);
+		}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult TestStatus(DashboardViewModel dashboardViewModel)
         {
-            apiCall.RunTest(dashboardViewModel);
+			string emailListStr = HttpContext.Session.GetString("emailList");
+
+            if (emailListStr != null)
+            {
+				List<Checkbox> emailList = JsonConvert.DeserializeObject<List<Checkbox>>(emailListStr);
+
+				dashboardViewModel.Emails = emailList;
+
+			}
+
+			System.Diagnostics.Debug.WriteLine(emailListStr);
+
+			apiCall.RunTest(dashboardViewModel);
 
             Thread.Sleep(5000);
 

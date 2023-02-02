@@ -18,25 +18,28 @@ namespace Automation_Website.Models
 
         [Required]
         [Display(Name = "Email")]
-        public List<Checkbox>? Emails { get; set; }
+        public List<Checkbox> Emails { get; set; }
 
         public string ToString(List<Checkbox> checkboxList, char delimeter = ',', bool stringEnclose = false)
         {
+
+            List<Checkbox> selectedCheckbox = checkboxList.FindAll(checkbox => checkbox.IsSelected);
+
             string list = "";
-            for (int i = 0; i < checkboxList.Count; i++)
+            for (int i = 0; i < selectedCheckbox.Count; i++)
             {
-                if (i > 0 && checkboxList[i].IsSelected && checkboxList[i-1].IsSelected)
+                if (i > 0 && selectedCheckbox.Count > 1)
                 {
                     list += delimeter;
                 }
 
-                if (stringEnclose && checkboxList[i].IsSelected)
+                if (stringEnclose)
                 {
-                    list += "'" + checkboxList[i].ToJson() + "'";
+                    list += "'" + selectedCheckbox[i].ToJson() + "'";
                 }
                 else
                 {
-                    list += checkboxList[i].ToJson();
+                    list += selectedCheckbox[i].ToJson();
                 }
             }
             
@@ -49,16 +52,9 @@ namespace Automation_Website.Models
             string testCases = ToString(TestCases);
             string browsers = ToString(Browsers);
 
-            if (Emails != null)
-            {
-				string emails = ToString(Emails, delimeter: ' ');
+			string emails = ToString(Emails, delimeter: ' ');
 
-				return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}"", ""emails"": ""{3}""}}", operatingSystems, testCases, browsers, emails);
-			}
-            else
-            {
-				return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}""}}", operatingSystems, testCases, browsers);
-			}
+			return string.Format(@"""inputs"": {{""operatingSystems"": ""[{0}]"", ""testcases"": ""{1}"", ""browsers"": ""{2}"", ""emails"": ""{3}""}}", operatingSystems, testCases, browsers, emails);
         }
     }
 

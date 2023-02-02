@@ -27,6 +27,8 @@ namespace Automation_Website.Models
             var body = string.Format(@"{{""ref"": ""main"", {0} }}", dashboardViewModel.ToJson());
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
+            System.Diagnostics.Debug.WriteLine(body);
+
             RestResponse response = client.Post(request);
 
             return response;
