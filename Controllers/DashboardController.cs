@@ -31,8 +31,6 @@ namespace Automation_Website.Controllers
                     },
                     Emails = new List<Checkbox>
                     {
-                        new Checkbox { IsSelected = true, Value = "leoyuntao@gmail.com"},
-                        new Checkbox { IsSelected = true, Value = "Windows@gmail.com" },
                     },
                     TestCases = new List<Checkbox>
                     {

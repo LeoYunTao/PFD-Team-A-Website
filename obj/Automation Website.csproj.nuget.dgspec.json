@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\School\\PFD\\Website\\Automation Website.csproj": {}
+    "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\Automation Website.csproj": {}
   },
   "projects": {
-    "C:\\School\\PFD\\Website\\Automation Website.csproj": {
+    "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\Automation Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\School\\PFD\\Website\\Automation Website.csproj",
+        "projectUniqueName": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\Automation Website.csproj",
         "projectName": "Automation Website",
-        "projectPath": "C:\\School\\PFD\\Website\\Automation Website.csproj",
-        "packagesPath": "C:\\Users\\terre\\.nuget\\packages\\",
-        "outputPath": "C:\\School\\PFD\\Website\\obj\\",
+        "projectPath": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\Automation Website.csproj",
+        "packagesPath": "C:\\Users\\Leoyu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leoyu\\Documents\\PFD-Team-A-Website\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\terre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leoyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
