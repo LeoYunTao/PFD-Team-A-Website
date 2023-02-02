@@ -82,7 +82,13 @@ namespace Automation_Website.Controllers
         {
             string str = HttpContext.Session.GetString("dashboardViewModel");
 
-            DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str);
+			var settings = new JsonSerializerSettings
+			{
+				NullValueHandling = NullValueHandling.Ignore,
+				MissingMemberHandling = MissingMemberHandling.Ignore
+			};
+
+			DashboardViewModel dashboardViewModel = JsonConvert.DeserializeObject<DashboardViewModel>(str, settings);
 
             dashboardViewModel.Emails.Add(new Checkbox { IsSelected = true, Value = formCollection["email"] });
 
@@ -134,7 +140,9 @@ namespace Automation_Website.Controllers
 
         public ActionResult TestStatus(string id)
         {
-            WorkflowRun workflowRun = apiCall.GetWorkflowRun(id);
+			HttpContext.Session.SetString("api", apiCall.API_KEY);
+
+			WorkflowRun workflowRun = apiCall.GetWorkflowRun(id);
 
             string conclustion = workflowRun.conclusion == null ? "running" : workflowRun.conclusion;
 
