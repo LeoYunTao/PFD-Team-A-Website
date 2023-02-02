@@ -62,7 +62,7 @@ namespace Automation_Website.Controllers
             // Username converted to lowercase
             string username = formData["Username"].ToString();
             string password = formData["Password"].ToString();
-            if (username == "hi" && password == "hi")
+            if (username == "Rakesh" && password == "1234")
             {
 
                 HttpContext.Session.SetString("Username", username);
