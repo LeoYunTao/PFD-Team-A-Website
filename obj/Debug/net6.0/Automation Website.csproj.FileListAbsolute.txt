@@ -741,7 +741,6 @@ D:\OneDrive - Ngee Ann Polytechnic\YEAR 2 SEM 2\Portfolio development (PFD)\PFD-
 D:\OneDrive - Ngee Ann Polytechnic\YEAR 2 SEM 2\Portfolio development (PFD)\PFD-Team A- Website\obj\Debug\net6.0\Automation Website.pdb
 D:\OneDrive - Ngee Ann Polytechnic\YEAR 2 SEM 2\Portfolio development (PFD)\PFD-Team A- Website\obj\Debug\net6.0\Automation Website.genruntimeconfig.cache
 D:\OneDrive - Ngee Ann Polytechnic\YEAR 2 SEM 2\Portfolio development (PFD)\PFD-Team A- Website\obj\Debug\net6.0\ref\Automation Website.dll
-D:\OneDrive - Ngee Ann Polytechnic\YEAR 2 SEM 2\Portfolio development (PFD)\PFD-Team A- Website\bin\Debug\net6.0\Automation Website.dll.config
 C:\School\PFD\Website\bin\Debug\net6.0\appsettings.Development.json
 C:\School\PFD\Website\bin\Debug\net6.0\appsettings.json
 C:\School\PFD\Website\bin\Debug\net6.0\Automation Website.staticwebassets.runtime.json
