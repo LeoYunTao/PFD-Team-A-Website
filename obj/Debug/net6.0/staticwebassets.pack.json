@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
+      "Id": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
       "PackagePath": "staticwebassets\\Automation Website.bundle.scp.css"
     },
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\wwwroot\\app.config",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\app.config",
       "PackagePath": "staticwebassets\\app.config"
     },
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\wwwroot\\css\\site.css",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\wwwroot\\favicon.ico",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\wwwroot\\images\\negative-button.png",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\images\\negative-button.png",
       "PackagePath": "staticwebassets\\images\\negative-button.png"
     },
     {
-      "Id": "D:\\OneDrive - Ngee Ann Polytechnic\\YEAR 2 SEM 2\\Portfolio development (PFD)\\PFD-Team A- Website NEW\\wwwroot\\js\\site.js",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {

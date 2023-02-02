@@ -77,12 +77,10 @@
 					<div class="form-check ps-0">
 						<input class="form-check-input" hidden asp-for="@Model.Emails[i].IsSelected">
 						<label class="form-check-label" asp-for="@Model.Emails[i].IsSelected">
-							@Model.Emails[i].Value
+							<p>@Model.Emails[i].Value</p>
 						</label>
 						<input type="hidden" asp-for="@Model.Emails[i].Value">
-						<button type="button" class="col-2 offset-lg-4">
-							<img src="~/images/negative-button.png" alt="remove" class="img-fluid"/>
-                        </button>
+						<input type="image" src="~/images/negative-button.png" name="removeButton" class="float-end" style="height:30px;width:30px;" />
 					</div>
 				}
 
@@ -144,7 +142,7 @@
 				);
 		};
 
-		$("button.col-2.offset-lg-4").click(event => {
+		$("input[name='removeButton']").click(event => {
 			let selectedEmail = $(event.target).prev();
 
 			let formData = new FormData();
