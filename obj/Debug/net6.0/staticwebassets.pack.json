@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
+      "Id": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
       "PackagePath": "staticwebassets\\Automation Website.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\app.config",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\app.config",
       "PackagePath": "staticwebassets\\app.config"
     },
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\css\\site.css",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\favicon.ico",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\images\\negative-button.png",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\images\\negative-button.png",
       "PackagePath": "staticwebassets\\images\\negative-button.png"
     },
     {
-      "Id": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\js\\site.js",
+      "Id": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {

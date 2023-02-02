@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jziVnJn02z1yT82R3V3d0178qokiHco9o+SoFf1cHz4=",
+  "Hash": "EJZkTIzTh/u52tnNX0V7RAw1wtU4eWNsQgdgF9Sqj7Y=",
   "Source": "Automation Website",
   "BasePath": "_content/Automation Website",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Automation Website\\wwwroot",
       "Source": "Automation Website",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
+      "Identity": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css",
       "SourceId": "Automation Website",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
+      "OriginalItemSpec": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Automation Website.styles.css"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
+      "Identity": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css",
       "SourceId": "Automation Website",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "Automation Website.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
+      "OriginalItemSpec": "C:\\School\\PFD\\Website\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Automation Website.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\app.config",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\app.config",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "app.config",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\app.config"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\css\\site.css",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\css\\site.css",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\favicon.ico",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\favicon.ico",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\images\\negative-button.png",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\images\\negative-button.png",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "images/negative-button.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\negative-button.png"
     },
     {
-      "Identity": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\js\\site.js",
+      "Identity": "C:\\School\\PFD\\Website\\wwwroot\\js\\site.js",
       "SourceId": "Automation Website",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\matthew\\Desktop\\PFD\\WebsiteNew\\wwwroot\\",
+      "ContentRoot": "C:\\School\\PFD\\Website\\wwwroot\\",
       "BasePath": "_content/Automation Website",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
