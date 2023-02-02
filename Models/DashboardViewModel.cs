@@ -18,7 +18,7 @@ namespace Automation_Website.Models
 
         [Required]
         [Display(Name = "Email")]
-        public List<Checkbox> Emails { get; set; }
+        public List<Checkbox>? Emails { get; set; }
 
         public string ToString(List<Checkbox> checkboxList, char delimeter = ',', bool stringEnclose = false)
         {

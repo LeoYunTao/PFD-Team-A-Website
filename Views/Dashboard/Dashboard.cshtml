@@ -80,7 +80,7 @@
 							<p>@Model.Emails[i].Value</p>
 						</label>
 						<input type="hidden" asp-for="@Model.Emails[i].Value">
-						<input type="image" src="~/images/negative-button.png" name="removeButton" class="float-end" style="height:30px;width:30px;" />
+						<img role="button" src="~/images/negative-button.png" name="removeButton" class="float-end" style="height:30px;width:30px;" />
 					</div>
 				}
 
@@ -142,7 +142,7 @@
 				);
 		};
 
-		$("input[name='removeButton']").click(event => {
+		$("img[name='removeButton']").click(event => {
 			let selectedEmail = $(event.target).prev();
 
 			let formData = new FormData();
@@ -237,6 +237,7 @@
             });
             $(document).ready(function () {
                 $("form").submit(function (event) {
+					console.log(event.target);
                     var valid = true;
                     $("#checkboxes1,#checkboxes2,#checkboxes3").each(function () {
                         if (!$(this).find("input[type='checkbox']:checked").length) {
