@@ -10,7 +10,9 @@ namespace Automation_Website.Controllers
 
         public IActionResult Index(int id, string conclusion, string created)
         {
-            HistoryViewModel historyViewModel = new HistoryViewModel()
+			if (HttpContext.Session.GetString("Role") == null) return RedirectToAction("Index", "Home");
+
+			HistoryViewModel historyViewModel = new HistoryViewModel()
             {
                 Conclusion = conclusion,
                 Created = created,

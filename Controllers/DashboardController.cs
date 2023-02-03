@@ -11,8 +11,9 @@ namespace Automation_Website.Controllers
 
         public ActionResult Dashboard()
         {
+			if (HttpContext.Session.GetString("Role") == null) return RedirectToAction("Index", "Home");
 
-            HttpContext.Session.SetString("api", apiCall.API_KEY);
+			HttpContext.Session.SetString("api", apiCall.API_KEY);
 
             
             DashboardViewModel dashboardViewModel = new DashboardViewModel()
@@ -53,6 +54,8 @@ namespace Automation_Website.Controllers
 
             return View(dashboardViewModel);
         }
+
+
         [HttpPost]
         public ActionResult Dashboard(IFormCollection formData)
         {
@@ -64,7 +67,7 @@ namespace Automation_Website.Controllers
             {
 
                 HttpContext.Session.SetString("Username", username);
-                // Store user role “Staff” as a string in session with the key “Role”
+                // Store user Role “Staff” as a string in session with the key “Role”
                 HttpContext.Session.SetString("Role", "Automation Manager");
                 HttpContext.Session.SetString("LoginTime", DateTime.Now.ToString());
                 // Redirect user to the "Dashboard" view through an action
@@ -157,6 +160,8 @@ namespace Automation_Website.Controllers
 
         public ActionResult TestStatus(string id)
         {
+			if (HttpContext.Session.GetString("Role") == null) return RedirectToAction("Index", "Home");
+
 			HttpContext.Session.SetString("api", apiCall.API_KEY);
 
 			WorkflowRun workflowRun = apiCall.GetWorkflowRun(id);
@@ -262,8 +267,6 @@ namespace Automation_Website.Controllers
 
             return workflowJobsDictionary;
         }
-
-
 
     }
 }
